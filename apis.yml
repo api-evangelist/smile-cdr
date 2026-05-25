@@ -1,0 +1,333 @@
+aid: smile-cdr
+name: Smile Digital Health
+description: >-
+  Smile Digital Health (formerly Smile CDR) is a Toronto-based health
+  interoperability software company and the commercial steward of the open
+  source HAPI FHIR project (the world's most widely deployed Java
+  implementation of the HL7 FHIR standard). Its flagship product, Smile CDR
+  — marketed under the broader Smile Omni portfolio as the OmniVera Health
+  Data Platform — is a FHIR-native clinical data repository and integration
+  platform that ingests HL7 v2.x, CDA, CSV, JSON, XML, and FHIR payloads,
+  normalizes them into FHIR (R4, R5, STU3, DSTU2), and exposes them through
+  a hardened FHIR REST API, SMART on FHIR / OAuth2 / OIDC security, Bulk
+  Data export, Subscriptions, MDM, Terminology Services, CQL-based Quality
+  Measures, and a JSON Admin API. The platform is deployed on-prem and
+  across AWS, Azure, and GCP, with HITRUST v9.4, SOC 2 Type II, ISO 27001,
+  and ONC 2015 Edition certifications, and is used by 190+ global
+  customers, including 30+ US payers running CMS Interoperability and
+  Prior Authorization (CMS-0057-F) workloads on its CMS Suite. Adjacent
+  Smile Omni product families include OmniCompli (regulatory compliance,
+  including CMS Suite and CMS Concierge), OmniQ (digital quality measures
+  / HEDIS, Intelligence Hub), and OmniConcierge (managed and professional
+  services). The primary developer surface is the FHIR REST API, with
+  per-endpoint auto-generated OpenAPI / Swagger UI at `{baseUrl}/swagger-ui/`,
+  plus a separate JSON Admin API for cluster, module, user, audit, batch
+  job, MDM, and OpenID Connect administration.
+type: Index
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Healthcare
+  - FHIR
+  - HL7
+  - Clinical Data Repository
+  - Interoperability
+  - HAPI FHIR
+  - SMART on FHIR
+  - Terminology Services
+  - MDM
+  - Bulk Data
+  - Subscriptions
+  - CMS Interoperability
+  - Prior Authorization
+  - Digital Quality Measures
+  - CQL
+  - Payer
+  - Provider
+  - Health Information Exchange
+url: https://raw.githubusercontent.com/api-evangelist/smile-cdr/refs/heads/main/apis.yml
+created: '2026-05-24'
+modified: '2026-05-24'
+specificationVersion: '0.20'
+apis:
+  - aid: smile-cdr:smile-cdr-fhir-endpoint
+    name: Smile CDR FHIR Endpoint
+    description: >-
+      The core FHIR REST API exposed by every Smile CDR FHIR Endpoint module.
+      Supports the full FHIR REST interaction set (read, vread, update,
+      patch, delete, history, search, transaction, batch, conditional CRUD)
+      across FHIR R4, R5, STU3, and DSTU2, plus FHIRPath, custom search
+      parameters, custom operations, and conformance via the
+      `/metadata` CapabilityStatement. OpenAPI / Swagger UI is
+      auto-generated and served at `{baseUrl}/swagger-ui/` when enabled.
+    humanURL: https://smilecdr.com/docs/fhir/standard.html
+    tags:
+      - FHIR
+      - REST API
+      - CRUD
+      - Search
+      - CapabilityStatement
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/fhir/standard.html
+      - type: Documentation
+        url: https://smilecdr.com/docs/fhir/crud_operations.html
+      - type: Documentation
+        url: https://smilecdr.com/docs/fhir/searching.html
+      - type: OpenAPISupport
+        url: https://smilecdr.com/docs/fhir_repository/openapi_swagger.html
+      - type: SwaggerUI
+        url: https://hapi.fhir.org/baseR4/swagger-ui/
+  - aid: smile-cdr:smile-cdr-smart-on-fhir
+    name: Smile CDR SMART on FHIR
+    description: >-
+      SMART on FHIR / OAuth2 / OIDC authorization surface for FHIR endpoints,
+      supporting standalone launch, EHR launch, public and confidential
+      clients, scopes, PKCE, refresh tokens, and consent. Includes
+      `.well-known/smart-configuration`, authorization, token, introspection,
+      and revocation endpoints.
+    humanURL: https://smilecdr.com/docs/smart/index.html
+    tags:
+      - SMART on FHIR
+      - OAuth2
+      - OIDC
+      - Authorization
+      - Consent
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/smart/index.html
+      - type: Documentation
+        url: https://smilecdr.com/docs/security/openid_connect.html
+  - aid: smile-cdr:smile-cdr-bulk-data
+    name: Smile CDR Bulk Data
+    description: >-
+      Implementation of the FHIR Bulk Data Access (Flat FHIR) specification
+      for asynchronous, system-, group-, and patient-level export of FHIR
+      resources as NDJSON, with status polling, manifest, and backend
+      services authorization.
+    humanURL: https://smilecdr.com/docs/bulk/fhir_bulk_export.html
+    tags:
+      - Bulk Data
+      - NDJSON
+      - Export
+      - Asynchronous
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/bulk/fhir_bulk_export.html
+      - type: Documentation
+        url: https://smilecdr.com/docs/bulk/fhir_bulk_import.html
+  - aid: smile-cdr:smile-cdr-subscriptions
+    name: Smile CDR Subscriptions
+    description: >-
+      FHIR Subscription (R4) and Subscription / SubscriptionTopic (R4B/R5
+      backport) support for push notifications on resource change, with
+      REST hook, websocket, email, and message-queue channels.
+    humanURL: https://smilecdr.com/docs/fhir/subscriptions.html
+    tags:
+      - Subscriptions
+      - Webhooks
+      - Event Driven
+      - Notifications
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/fhir/subscriptions.html
+  - aid: smile-cdr:smile-cdr-mdm
+    name: Smile CDR Master Data Management
+    description: >-
+      FHIR-native Master Data Management for Patient and Practitioner records,
+      with probabilistic matching, golden records, candidate matching rules,
+      survivorship, and administrative override via the MDM Admin endpoint
+      and `$mdm-*` FHIR operations.
+    humanURL: https://smilecdr.com/docs/mdm/mdm.html
+    tags:
+      - MDM
+      - Master Data Management
+      - Patient Matching
+      - Golden Record
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/mdm/mdm.html
+  - aid: smile-cdr:smile-cdr-terminology
+    name: Smile CDR Terminology Services
+    description: >-
+      Terminology Service implementing FHIR `$expand`, `$validate-code`,
+      `$lookup`, `$translate`, and `$subsumes` operations over CodeSystems,
+      ValueSets, and ConceptMaps. Bundled support for SNOMED CT, LOINC,
+      ICD-10/11, RxNorm, and CPT, with bulk terminology upload.
+    humanURL: https://smilecdr.com/docs/terminology/index.html
+    tags:
+      - Terminology
+      - CodeSystem
+      - ValueSet
+      - ConceptMap
+      - SNOMED CT
+      - LOINC
+      - ICD-10
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/terminology/index.html
+  - aid: smile-cdr:smile-cdr-cql-quality-measures
+    name: Smile CDR CQL & Quality Measures
+    description: >-
+      Clinical Quality Language (CQL) engine and FHIR Clinical Reasoning
+      module (Measure, Library, PlanDefinition) backing OmniQ digital
+      Quality Measures (dQM) including HEDIS measures, with `$evaluate-measure`
+      and `$apply` operations.
+    humanURL: https://smilecdr.com/docs/measures/index.html
+    tags:
+      - CQL
+      - Quality Measures
+      - HEDIS
+      - dQM
+      - Clinical Reasoning
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/measures/index.html
+  - aid: smile-cdr:smile-cdr-cda-exchange
+    name: Smile CDR CDA Exchange
+    description: >-
+      Bidirectional HL7 CDA / C-CDA exchange — ingest CDA documents and
+      convert to FHIR Bundle, and render FHIR data as CDA for partners that
+      consume the older standard. Exposed via the CDA Exchange Admin
+      endpoint and inbound document upload channels.
+    humanURL: https://smilecdr.com/docs/cda_exchange/cda_exchange.html
+    tags:
+      - CDA
+      - C-CDA
+      - Document Exchange
+      - HL7
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/cda_exchange/cda_exchange.html
+  - aid: smile-cdr:smile-cdr-hl7-v2
+    name: Smile CDR HL7 v2.x Interface
+    description: >-
+      MLLP-based HL7 v2.x inbound and outbound interfaces for ADT, ORM, ORU,
+      MDM, SIU, VXU, and DFT messages, with bidirectional v2-to-FHIR mapping
+      and ACK/NAK handling.
+    humanURL: https://smilecdr.com/docs/hl7v2x/hl7v2x_support.html
+    tags:
+      - HL7 v2
+      - MLLP
+      - ADT
+      - ORU
+      - Integration
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/hl7v2x/hl7v2x_support.html
+  - aid: smile-cdr:smile-cdr-json-admin-api
+    name: Smile CDR JSON Admin API
+    description: >-
+      REST/JSON administrative API for cluster operations — Module Config,
+      System Config, User Management, Audit Log, Transaction Log,
+      Troubleshooting Log, Metrics, Runtime Status, Batch Job, Bulk Import,
+      MDM Admin, OpenID Connect Clients / Keystores / Servers / Sessions,
+      Privacy Notice, and Version. Permission-scoped (VIEW_MODULE_CONFIG,
+      UPDATE_MODULE_CONFIG, CONTROL_MODULE, etc.).
+    humanURL: https://smilecdr.com/docs/json_admin_endpoints/json_admin_api.html
+    tags:
+      - Admin API
+      - Module Configuration
+      - User Management
+      - Audit Log
+      - Operations
+    properties:
+      - type: Documentation
+        url: https://smilecdr.com/docs/json_admin_endpoints/json_admin_api.html
+      - type: Documentation
+        url: https://smilecdr.com/docs/json_admin_endpoints/module_config_endpoint.html
+      - type: Documentation
+        url: https://smilecdr.com/docs/json_admin_endpoints/user_management_endpoint.html
+  - aid: smile-cdr:smile-cdr-cms-suite
+    name: Smile CDR CMS Interoperability Suite
+    description: >-
+      Pre-packaged CMS-compliant FHIR APIs for US payers — Patient Access,
+      Provider Directory, Drug Formulary, Payer-to-Payer (CMS-9115-F) and
+      Prior Authorization (CMS-0057-F / HL7 Da Vinci PAS, CRD, DTR) — built
+      on Smile CDR with US Core, CARIN BB, Da Vinci, and PDex profiles.
+    humanURL: https://www.smiledigitalhealth.com/solution/cms-suite
+    tags:
+      - CMS Interoperability
+      - Patient Access
+      - Prior Authorization
+      - Da Vinci
+      - US Core
+      - CARIN BB
+      - PDex
+      - Payer
+    properties:
+      - type: Documentation
+        url: https://www.smiledigitalhealth.com/solution/cms-suite
+common:
+  - type: Website
+    url: https://www.smiledigitalhealth.com
+  - type: Portal
+    url: https://www.smiledigitalhealth.com
+  - type: ProductLine — Smile Omni
+    url: https://www.smiledigitalhealth.com/smile-omni
+  - type: Product — OmniVera Health Data Platform
+    url: https://www.smiledigitalhealth.com/smilecdr
+  - type: Product — OmniCompli CMS Suite
+    url: https://www.smiledigitalhealth.com/solution/cms-suite
+  - type: Product — OmniQ dQM
+    url: https://www.smiledigitalhealth.com/solution/digital-quality-measures
+  - type: Product — OmniConcierge
+    url: https://www.smiledigitalhealth.com/solution/professional-services
+  - type: Documentation
+    url: https://smilecdr.com/docs/welcome/table_of_contents.html
+  - type: Documentation — Installation
+    url: https://smilecdr.com/docs/installation/index.html
+  - type: Documentation — Security
+    url: https://smilecdr.com/docs/security/index.html
+  - type: Documentation — OpenAPI / Swagger
+    url: https://smilecdr.com/docs/fhir_repository/openapi_swagger.html
+  - type: Documentation — JSON Admin API
+    url: https://smilecdr.com/docs/json_admin_endpoints/json_admin_api.html
+  - type: OpenSource — HAPI FHIR
+    url: https://hapifhir.io
+  - type: GitHubOrganization — Smile Digital Health
+    url: https://github.com/smilecdr
+  - type: GitHubOrganization — HAPI FHIR
+    url: https://github.com/hapifhir
+  - type: SDK — HAPI FHIR (Java)
+    url: https://github.com/hapifhir/hapi-fhir
+  - type: SDK — FHIR.ts (TypeScript / JavaScript)
+    url: https://github.com/smilecdr/FHIR.ts
+  - type: TestServer — Public HAPI FHIR
+    url: https://hapi.fhir.org
+  - type: Industry — Payers
+    url: https://www.smiledigitalhealth.com/industry/payers
+  - type: Industry — Providers
+    url: https://www.smiledigitalhealth.com/industry/providers
+  - type: Industry — Health Information Exchanges
+    url: https://www.smiledigitalhealth.com/industry/health-information-exchanges
+  - type: Industry — Government
+    url: https://www.smiledigitalhealth.com/industry/government
+  - type: Industry — Life Sciences
+    url: https://www.smiledigitalhealth.com/industry/life-sciences
+  - type: Company
+    url: https://www.smiledigitalhealth.com/about
+  - type: Newsroom
+    url: https://www.smiledigitalhealth.com/blog
+  - type: Events
+    url: https://www.smiledigitalhealth.com/events
+  - type: Careers
+    url: https://www.smiledigitalhealth.com/careers
+  - type: Contact
+    url: https://www.smiledigitalhealth.com/contact
+  - type: TrustCenter
+    url: https://www.smiledigitalhealth.com/trust-center
+  - type: PrivacyPolicy
+    url: https://www.smiledigitalhealth.com/privacy-policy
+  - type: TermsOfService
+    url: https://www.smiledigitalhealth.com/terms-of-use
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/smile-digital-health
+  - type: Twitter
+    url: https://twitter.com/SmileDigiHealth
+  - type: YouTube
+    url: https://www.youtube.com/@SmileCDR
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
