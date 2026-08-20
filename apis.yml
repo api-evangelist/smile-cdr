@@ -49,6 +49,25 @@ tags:
   - Terminology Services
   - MDM
   - Bulk Data
+  - Subscription
+  - CMS Interoperability
+  - Prior Authorization
+  - Digital Quality Measures
+  - CQL
+  - Payer
+  - Provider
+  - Health Information Exchange
+tags_raw:
+  - Healthcare
+  - FHIR
+  - HL7
+  - Clinical Data Repository
+  - Interoperability
+  - HAPI FHIR
+  - SMART on FHIR
+  - Terminology Services
+  - MDM
+  - Bulk Data
   - Subscriptions
   - CMS Interoperability
   - Prior Authorization
@@ -101,6 +120,12 @@ apis:
     humanURL: https://smilecdr.com/docs/smart/index.html
     tags:
       - SMART on FHIR
+      - Authentication
+      - OIDC
+      - Authorization
+      - Consent
+    tags_raw:
+      - SMART on FHIR
       - OAuth2
       - OIDC
       - Authorization
@@ -120,6 +145,11 @@ apis:
     humanURL: https://smilecdr.com/docs/bulk/fhir_bulk_export.html
     tags:
       - Bulk Data
+      - ND-JSON
+      - Export
+      - Asynchronous
+    tags_raw:
+      - Bulk Data
       - NDJSON
       - Export
       - Asynchronous
@@ -136,6 +166,11 @@ apis:
       REST hook, websocket, email, and message-queue channels.
     humanURL: https://smilecdr.com/docs/fhir/subscriptions.html
     tags:
+      - Subscription
+      - Webhook
+      - Event-Driven
+      - Notification
+    tags_raw:
       - Subscriptions
       - Webhooks
       - Event Driven
@@ -219,6 +254,12 @@ apis:
       and ACK/NAK handling.
     humanURL: https://smilecdr.com/docs/hl7v2x/hl7v2x_support.html
     tags:
+      - HL7v2
+      - MLLP
+      - ADT
+      - ORU
+      - Integration
+    tags_raw:
       - HL7 v2
       - MLLP
       - ADT
@@ -242,6 +283,11 @@ apis:
       - Module Configuration
       - User Management
       - Audit Log
+    tags_raw:
+      - Admin API
+      - Module Configuration
+      - User Management
+      - Audit Log
       - Operations
     properties:
       - type: Documentation
@@ -259,6 +305,15 @@ apis:
       on Smile CDR with US Core, CARIN BB, Da Vinci, and PDex profiles.
     humanURL: https://www.smiledigitalhealth.com/solution/cms-suite
     tags:
+      - CMS Interoperability
+      - Patient Access
+      - Prior Authorization
+      - Da Vinci
+      - US Core
+      - CARIN BB
+      - PDEX
+      - Payer
+    tags_raw:
       - CMS Interoperability
       - Patient Access
       - Prior Authorization
