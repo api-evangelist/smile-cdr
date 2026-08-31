@@ -156,7 +156,7 @@ apis:
     humanURL: https://smilecdr.com/docs/bulk/fhir_bulk_export.html
     tags:
       - Bulk Data
-      - ND-JSON
+      - NDJSON
       - Export
       - Asynchronous
     tags_raw:
@@ -179,7 +179,7 @@ apis:
     tags:
       - Subscription
       - Webhook
-      - Event-Driven
+      - Event Driven
       - Notification
     tags_raw:
       - Subscriptions
@@ -265,7 +265,7 @@ apis:
       and ACK/NAK handling.
     humanURL: https://smilecdr.com/docs/hl7v2x/hl7v2x_support.html
     tags:
-      - HL7v2
+      - HL7 v2
       - MLLP
       - ADT
       - ORU
@@ -322,7 +322,7 @@ apis:
       - Da Vinci
       - US Core
       - CARIN BB
-      - PDEX
+      - PDex
       - Payer
     tags_raw:
       - CMS Interoperability
