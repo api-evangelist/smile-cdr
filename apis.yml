@@ -65,8 +65,8 @@ tags:
   - Prior Authorization
   - Digital Quality Measures
   - CQL
-  - Payer
-  - Provider
+  - Payers
+  - Providers
   - Health Information Exchange
 tags_raw:
   - Healthcare
@@ -293,7 +293,7 @@ apis:
       - Admin API
       - Module Configuration
       - User Management
-      - Audit Log
+      - Audit Logs
     tags_raw:
       - Admin API
       - Module Configuration
@@ -323,7 +323,7 @@ apis:
       - US Core
       - CARIN BB
       - PDEX
-      - Payer
+      - Payers
     tags_raw:
       - CMS Interoperability
       - Patient Access
