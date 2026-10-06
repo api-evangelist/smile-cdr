@@ -89,7 +89,7 @@ tags_raw:
   - Health Information Exchange
 url: https://raw.githubusercontent.com/api-evangelist/smile-cdr/refs/heads/main/apis.yml
 created: '2026-05-24'
-modified: '2026-05-24'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: smile-cdr:smile-cdr-fhir-endpoint
@@ -337,6 +337,10 @@ apis:
       - type: Documentation
         url: https://www.smiledigitalhealth.com/solution/cms-suite
 common:
+  - url: https://www.smiledigitalhealth.com/our-blog
+    type: Blog
+  - url: https://www.smiledigitalhealth.com/our-blog/rss.xml
+    type: BlogRSS
   - type: DomainSecurity
     url: security/smile-cdr-domain-security.yml
   - type: Website
