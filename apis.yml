@@ -132,7 +132,7 @@ apis:
     tags:
       - SMART on FHIR
       - Authentication
-      - OIDC
+      - OpenID Connect
       - Authorization
       - Consent
     tags_raw:
